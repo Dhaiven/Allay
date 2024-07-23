@@ -124,8 +124,8 @@ public class BlockBaseComponentImpl implements BlockBaseComponent {
     }
 
     @Override
-    public boolean onInteract(ItemStack itemStack, Dimension dimension, PlayerInteractInfo interactInfo) {
-        var event = new BlockOnInteractEvent(itemStack, dimension, interactInfo, false);
+    public boolean onInteract(BlockStateWithPos blockState, ItemStack itemStack, PlayerInteractInfo interactInfo) {
+        var event = new BlockOnInteractEvent(blockState, itemStack, interactInfo, false);
         manager.callEvent(event);
         return event.isSuccess();
     }

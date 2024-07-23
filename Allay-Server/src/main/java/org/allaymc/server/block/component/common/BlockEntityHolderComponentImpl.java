@@ -63,8 +63,8 @@ public class BlockEntityHolderComponentImpl<T extends BlockEntity> implements Bl
 
     @EventHandler
     private void onInteract(BlockOnInteractEvent event) {
-        var pos = event.getInteractInfo().clickBlockPos();
-        var blockEntity = getBlockEntity(pos.x(), pos.y(), pos.z(), event.getDimension());
+        var pos = event.getBlockStateWithPos().pos();
+        var blockEntity = getBlockEntity(pos.x(), pos.y(), pos.z(), pos.dimension());
         blockEntity.onInteract(event);
     }
 }

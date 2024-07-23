@@ -145,7 +145,7 @@ public interface BlockBaseComponent extends BlockComponent {
      * For example, right-clicking on the crafting table is normally considered a valid operation, so this method will return true
      * If false is returned, the useItemOn method of the player's item will continue to be called
      */
-    boolean onInteract(ItemStack itemStack, Dimension dimension, PlayerInteractInfo interactInfo);
+    boolean onInteract(BlockStateWithPos blockState, ItemStack itemStack, PlayerInteractInfo interactInfo);
 
     /**
      * Called when a block is replaced.
